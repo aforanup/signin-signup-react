@@ -4,7 +4,9 @@ const Login = () => {
     let [username, setUsername] = useState("");
     let [password, setPassword] = useState("");
 
-    const submitLoginFunction = () => {
+    const submitLoginFunction = (event) => {
+        event.preventDefault();
+        console.log(username, password);
         setUsername("");
         setPassword("");
     };
@@ -14,11 +16,23 @@ const Login = () => {
                 <table>
                     <tr>Login</tr>
                     <tr>
-                        <input type="text" />
+                        <label htmlFor="username-login">Username: </label>
+                        <input
+                            id="username-login"
+                            type="text"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                        />
                     </tr>
 
                     <tr>
-                        <input type="password" />
+                        <label htmlFor="password-login">Password: </label>
+                        <input
+                            id="password-login"
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
                     </tr>
                     <tr>
                         <button>Login</button>
