@@ -10,51 +10,54 @@ const Signup = () => {
         console.log(username, password, rpassword);
         if (password !== null && rpassword !== null && rpassword !== password) {
             console.log("password and repeat password doesnot match");
-            return;
+        } else {
+            setUsername("");
+            setPassword("");
+            setRpassword("");
         }
-        setUsername("");
-        setPassword("");
-        setRpassword("");
     };
     return (
         <div>
             <form onSubmit={submitSignupFunction}>
-                <table>
-                    <tr>Sign Up</tr>
-                    <tr>
-                        <label htmlFor="username-signup">Username: </label>
+                <div>
+                    <h1>Sign Up</h1>
+
+                    <div>
+                        {/* <label htmlFor="username-signup">Username: </label> */}
                         <input
+                            placeholder="Enter Username"
                             id="username-signup"
                             type="text"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                         />
-                    </tr>
+                    </div>
 
-                    <tr>
-                        <label htmlFor="password-signup">Password: </label>
+                    <div>
+                        {/* <label htmlFor="password-signup">Password: </label> */}
                         <input
+                            placeholder="Enter password"
                             id="password-signup"
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
-                    </tr>
-                    <tr>
-                        <label htmlFor="password-signup-repeat">
-                            Repeat Password:{" "}
-                        </label>
+                    </div>
+                    <div>
+                        {/* <label htmlFor="password-signup-repeat"> */}
+                        {/* Repeat Password: </label> */}
                         <input
+                            placeholder="Repeat Password"
                             id="password-signup-repeat"
                             type="password"
                             value={rpassword}
                             onChange={(e) => setRpassword(e.target.value)}
                         />
-                    </tr>
-                    <tr>
+                    </div>
+                    <div>
                         <button>Sign up</button>
-                    </tr>
-                </table>
+                    </div>
+                </div>
             </form>
         </div>
     );

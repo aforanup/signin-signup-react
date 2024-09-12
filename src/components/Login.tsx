@@ -6,38 +6,41 @@ const Login = () => {
 
     const submitLoginFunction = (event) => {
         event.preventDefault();
-        console.log(username, password);
+        // console.log(username, password);
         setUsername("");
         setPassword("");
     };
     return (
         <div>
             <form onSubmit={submitLoginFunction}>
-                <table>
-                    <tr>Login</tr>
-                    <tr>
-                        <label htmlFor="username-login">Username: </label>
+                <div>
+                    <h1>Signin</h1>
+
+                    <div>
+                        {/* <label htmlFor="username-login">Username: </label> */}
                         <input
+                            placeholder="Enter Username"
                             id="username-login"
                             type="text"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                         />
-                    </tr>
+                    </div>
 
-                    <tr>
-                        <label htmlFor="password-login">Password: </label>
+                    <div>
+                        {/* <label htmlFor="password-login">Password: </label> */}
                         <input
+                            placeholder="Enter password"
                             id="password-login"
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
-                    </tr>
-                    <tr>
+                    </div>
+                    <div>
                         <button>Login</button>
-                    </tr>
-                </table>
+                    </div>
+                </div>
             </form>
         </div>
     );
